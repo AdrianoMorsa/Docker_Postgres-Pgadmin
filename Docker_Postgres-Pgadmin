@@ -1,3 +1,6 @@
+#Configurando e instalando Postgres com o Pgadmin WEB 
+
+
 1. Criando a rede para comunicação dos containers 
 
 #docker network create --driver bridge postgres-network 
