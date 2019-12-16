@@ -1,0 +1,27 @@
+1. Criando a rede para comunicação dos containers 
+
+#docker network create --driver bridge postgres-network 
+
+  
+
+2. Criando o container Postgres 
+
+#docker run -d --name YOUR_NAME --network=postgres-network -v /home/pgdata:/var/lib/postgresql/data -e "POSTGRES_PASSWORD=YOUR_KEY" -p 5432:5432 postgres 
+
+  
+
+3. Criando o container PgAdmin 
+
+#docker run --name a YOUR_NAME --network=postgres-network -p 15432:80 -e "PGADMIN_DEFAULT_EMAIL=adrianomoreira84@hotmail.com" -e "PGADMIN_DEFAULT_PASSWORD=1 YOUR_KEY " -d dpage/pgadmin4 
+
+  
+
+4. Acessando o container Postgres 
+
+#docker exec -it YOUR_NAME psql -U postgres 
+
+  
+
+5. Atualizando a senha do usuário postgres 
+
+#ALTER USER p YOUR_NAME PASSWORD ' YOUR_KEY ' 
